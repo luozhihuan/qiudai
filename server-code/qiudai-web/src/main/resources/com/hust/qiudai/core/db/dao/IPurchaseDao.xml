@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hust.qiudai.core.db.dao.IPurchaseDao">
+
+	<insert id="addQiudaiInfo" useGeneratedKeys="true" keyProperty="qiudaiInfoId"
+		parameterType="com.hust.qiudai.core.db.QiudaiInfo">
+		insert into
+		t_qiudai_qiudai_info (deliverylimitedtime
+		,publishtime
+		,fee,publisherid,publisherdormbuildingid,supply
+		)VALUES
+		(#{deliveryLimitedTime},#{publishTime},#{fee},#{publisherId},#{publisherDorimitoryBuildingId},#{supply})
+	</insert>
+
+
+	<insert id="addQiudaiGoodsBuyInfo" parameterType="com.hust.qiudai.core.db.GoodsIdAndBuyNum">
+		insert into
+		t_qiudai_goods_buy_info (goodsid
+		,goodsbuynum
+		,qiudaiinfoid
+		)VALUES
+		(#{goodsId},#{buyNum},#{qiudaiInfoId})
+	</insert>
+</mapper>

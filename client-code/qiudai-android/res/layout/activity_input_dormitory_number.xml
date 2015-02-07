@@ -1,0 +1,74 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".InputDormitoryNumberActivity" >
+
+    <TextView
+        android:id="@+id/txt_input_dormitory_number"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentTop="true"
+        android:background="#336699"
+        android:gravity="center"
+        android:text="请输入宿舍号"
+        android:textColor="#FFFFFF"
+        android:textSize="20dp" >
+    </TextView>
+    
+    
+    <RelativeLayout
+            android:id="@+id/inputEmailLayout"
+            android:layout_width="fill_parent"
+            android:layout_marginTop="5dp"
+            android:layout_height="50dip"
+            android:layout_below="@+id/txt_input_dormitory_number"
+            android:layout_marginLeft="10dip"
+            android:layout_marginRight="10dip"
+            android:background="@drawable/edit"
+            >
+
+            <EditText
+                android:id="@+id/edt_input_dormitory_number"
+                android:layout_width="fill_parent"
+                android:layout_height="50dip"
+                android:layout_marginBottom="2dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="40dp"
+                android:layout_marginTop="2dp"
+                android:background="@null"
+                android:hint="@string/input_dormitory_number"
+                android:paddingLeft="4dip" />
+
+
+            <ImageView
+                android:id="@+id/close_Tips"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginBottom="13dp"
+                android:layout_marginRight="8dp"
+                android:contentDescription="@drawable/close_pushbanner"
+                android:src="@drawable/close_pushbanner"
+                android:visibility="invisible" />
+        </RelativeLayout>
+    
+    
+     <Button
+        android:id="@+id/btn_commit"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_below="@id/inputEmailLayout"
+        android:background="@drawable/button"
+        android:text="提交"
+        android:textColor="#ffffff"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+    
+    
+
+</RelativeLayout>

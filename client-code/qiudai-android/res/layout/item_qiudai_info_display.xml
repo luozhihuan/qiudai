@@ -1,0 +1,77 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="60dp"
+    android:background="#ffffffff"
+    android:orientation="horizontal"
+    android:padding="10dp" >
+
+    <ImageView
+        android:id="@+id/img_publisher_head"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_marginRight="10dp"
+        android:layout_weight="1" />
+
+    <LinearLayout
+        android:id="@+id/layout_qiudai_info_address_arrivaltime"
+        android:layout_width="0dp"
+        android:layout_height="fill_parent"
+        android:layout_weight="2"
+        android:layout_marginRight="5dp"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/txt_delivery_limited_time"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_gravity="bottom"
+            android:layout_marginTop="5dp"
+            android:layout_weight="1"
+            android:singleLine="true"
+            android:text="递送的截止时间"
+            android:textColor="#ff000000"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/txt_publisher_address"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_gravity="top"
+            android:layout_marginBottom="5dp"
+            android:layout_weight="1"
+            android:maxLines="2"
+            android:text="地址"
+            android:textColor="#ff555555"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layout_qiudai_info_publishtime_fee"
+        android:layout_width="0dp"
+        android:layout_height="fill_parent"
+        android:layout_weight="1"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/txt_publish_time"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_gravity="right"
+            android:layout_marginTop="5dp"
+            android:layout_weight="1"
+            android:text="发布时间"
+            android:textColor="#ff555555"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/txt_fee"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_gravity="right"
+            android:layout_weight="1"
+            android:text="跑路费"
+            android:textColor="#ff555555"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+</LinearLayout>

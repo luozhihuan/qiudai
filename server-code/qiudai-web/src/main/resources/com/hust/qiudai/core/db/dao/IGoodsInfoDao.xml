@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hust.qiudai.core.db.dao.IGoodsInfoDao">
+
+
+	<select id="findDiscountingGoodsInfoListByUniversityId"
+		resultType="com.hust.qiudai.core.db.GoodsInfo">
+		SELECT DISTINCT
+		g.goodsid AS goodsInfoId,
+		g.goodsname AS
+		goodsName,
+		sg.shopsgoodsprice AS goodsPrice,
+		g.goodscategory AS
+		goodsCategory,
+		g.goodsimageurl AS goodsImageUrl
+		FROM
+		t_qiudai_shops_goods sg
+		JOIN t_qiudai_goods g ON sg.goodsid = g.goodsid
+		JOIN t_qiudai_shops s ON sg.shopsid = s.shopsid
+		JOIN t_qiudai_campus c
+		ON s.campusid = s.campusid
+		JOIN t_qiudai_university u ON c.universityid
+		= u.universityid
+		WHERE
+		u.universityid = #{universityid} and
+		sg.isdiscounting = 1
+	</select>
+
+
+	<select id="findDiscountingGoodsInfoListByShopsId" resultType="com.hust.qiudai.core.db.GoodsInfo">
+		SELECT DISTINCT
+		g.goodsid AS goodsInfoId,
+		g.goodsname AS goodsName,
+		sg.shopsgoodsprice AS goodsPrice,
+		g.goodscategory AS goodsCategory,
+		g.goodsimageurl AS goodsImageUrl
+		FROM
+		t_qiudai_shops s
+		JOIN
+		t_qiudai_shops_goods sg ON s.shopsid = sg.shopsid
+		JOIN t_qiudai_goods g
+		ON sg.goodsid = g.goodsid
+		where sg.isdiscounting = 1 and sg.shopsid =
+		#{shopsid}
+	</select>
+
+
+
+
+	<select id="findDiscountingGoodsInfoListByUniversityIdGoodsCategoryId"
+		resultType="com.hust.qiudai.core.db.GoodsInfo">
+		SELECT DISTINCT
+		g.goodsid AS goodsInfoId,
+		g.goodsname AS
+		goodsName,
+		sg.shopsgoodsprice AS goodsPrice,
+		g.goodscategory AS
+		goodsCategory,
+		g.goodsimageurl AS goodsImageUrl
+		FROM
+		t_qiudai_shops s
+		JOIN t_qiudai_shops_goods sg ON s.shopsid = sg.shopsid
+		JOIN
+		t_qiudai_goods g ON sg.goodsid = g.goodsid
+		JOIN t_qiudai_campus c ON
+		c.campusid = s.campusid
+		JOIN t_qiudai_university u ON c.universityid =
+		u.universityid
+		WHERE
+		u.universityid = #{universityid}
+		AND g.goodscategory
+		= #{goodscategoryid}
+		AND sg.isdiscounting = 1
+	</select>
+
+
+	<select id="findDiscountingGoodsInfoListByShopsIdGoodsCategoryId"
+		resultType="com.hust.qiudai.core.db.GoodsInfo">
+		SELECT
+		g.goodsid AS goodsInfoId,
+		g.goodsname AS goodsName,
+		sg.shopsgoodsprice AS goodsPrice,
+		g.goodscategory AS goodsCategory,
+		g.goodsimageurl AS goodsImageUrl
+		FROM
+		t_qiudai_shops_goods sg
+		JOIN
+		t_qiudai_goods g ON sg.goodsid = g.goodsid
+		WHERE
+		sg.isdiscounting = 1
+		AND shopsid = #{shopsid} AND goodscategory = #{goodscategoryid}
+	</select>
+
+
+	<!-- 不打折 -->
+
+	<select id="findGoodsInfoListByUniversityId" resultType="com.hust.qiudai.core.db.GoodsInfo">
+		SELECT
+		DISTINCT
+		g.goodsid AS goodsInfoId,
+		g.goodsname AS
+		goodsName,
+		sg.shopsgoodsprice AS goodsPrice,
+		g.goodscategory AS
+		goodsCategory,
+		g.goodsimageurl AS goodsImageUrl
+		FROM
+		t_qiudai_shops_goods sg
+		JOIN
+		t_qiudai_goods g ON sg.goodsid = g.goodsid
+		JOIN t_qiudai_shops s ON
+		sg.shopsid = s.shopsid
+		JOIN t_qiudai_campus c
+		ON s.campusid = s.campusid
+		JOIN t_qiudai_university u ON c.universityid
+		= u.universityid
+		WHERE
+		u.universityid = #{universityid} and
+		sg.isdiscounting = 0
+	</select>
+
+
+	<select id="findGoodsInfoListByShopsId" resultType="com.hust.qiudai.core.db.GoodsInfo">
+		SELECT DISTINCT
+		g.goodsid AS goodsInfoId,
+		g.goodsname AS goodsName,
+		sg.shopsgoodsprice AS goodsPrice,
+		g.goodscategory AS goodsCategory,
+		g.goodsimageurl AS goodsImageUrl
+		FROM
+		t_qiudai_shops s
+		JOIN
+		t_qiudai_shops_goods sg ON s.shopsid = sg.shopsid
+		JOIN t_qiudai_goods g
+		ON sg.goodsid = g.goodsid
+		where sg.isdiscounting = 0 and sg.shopsid =
+		#{shopsid}
+	</select>
+
+
+
+
+	<select id="findGoodsInfoListByUniversityIdGoodsCategoryId"
+		resultType="com.hust.qiudai.core.db.GoodsInfo">
+		SELECT DISTINCT
+		g.goodsid AS goodsInfoId,
+		g.goodsname AS
+		goodsName,
+		sg.shopsgoodsprice AS goodsPrice,
+		g.goodscategory AS
+		goodsCategory,
+		g.goodsimageurl AS goodsImageUrl
+		FROM
+		t_qiudai_shops s
+		JOIN t_qiudai_shops_goods sg ON s.shopsid = sg.shopsid
+		JOIN
+		t_qiudai_goods g ON sg.goodsid = g.goodsid
+		JOIN t_qiudai_campus c ON
+		c.campusid = s.campusid
+		JOIN t_qiudai_university u ON c.universityid =
+		u.universityid
+		WHERE
+		u.universityid = #{universityid}
+		AND g.goodscategory
+		= #{goodscategoryid}
+		AND sg.isdiscounting = 0
+	</select>
+
+	<select id="findGoodsInfoListByShopsIdGoodsCategoryId"
+		resultType="com.hust.qiudai.core.db.GoodsInfo">
+		SELECT
+		g.goodsid AS goodsInfoId,
+		g.goodsname AS goodsName,
+		sg.shopsgoodsprice
+		AS goodsPrice,
+		g.goodscategory AS goodsCategory,
+		g.goodsimageurl AS
+		goodsImageUrl
+		FROM
+		t_qiudai_shops_goods sg
+		JOIN
+		t_qiudai_goods g ON
+		sg.goodsid = g.goodsid
+		WHERE
+		sg.shopsid = #{shopsid}
+		and
+		goodscategory = #{goodscategoryid}
+		AND sg.isdiscounting = 0
+	</select>
+
+
+</mapper>

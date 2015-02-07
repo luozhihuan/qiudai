@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- 用于SelectGoodsCategoryActivity界面中三个下拉选择条中文字的颜色 -->
+    <drawable name="selectionWordColor">#262626</drawable>
+
+</resources>

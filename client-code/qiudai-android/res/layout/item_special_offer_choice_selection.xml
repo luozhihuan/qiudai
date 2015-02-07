@@ -1,0 +1,24 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#F8F8F8"
+    android:padding="10dp" >
+	
+    
+    <TextView
+        android:id="@+id/txt_special_offer_choice_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:singleLine="true"
+        
+        android:layout_marginTop="5dp"
+
+        android:layout_alignTop="@id/img_publisher_head_url"
+        android:layout_toRightOf="@id/img_publisher_head_url"
+        
+        android:text="活动选择"
+        android:textSize="18sp"
+        android:textColor="@color/selectionWordColor" />
+    
+  
+</RelativeLayout>

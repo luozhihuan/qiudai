@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:jaxws="http://cxf.apache.org/jaxws" xmlns:jaxrs="http://cxf.apache.org/jaxrs"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	 	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+ 		http://www.springframework.org/schema/context
+ 		http://www.springframework.org/schema/context/spring-context-3.1.xsd
+ 		http://cxf.apache.org/jaxws 
+    	http://cxf.apache.org/schemas/jaxws.xsd
+    	http://cxf.apache.org/jaxrs 
+    	http://cxf.apache.org/schemas/jaxrs.xsd">
+
+
+	<import resource="classpath:META-INF/cxf/cxf.xml" />
+	<import resource="classpath:META-INF/cxf/cxf-extension-soap.xml" />
+	<import resource="classpath:META-INF/cxf/cxf-servlet.xml" />
+
+	<context:annotation-config />
+	<!--扫面该包下的全部类用于spring的依赖注入 -->
+	<context:component-scan base-package="com.hust.qiudai.**.impl" />
+
+	<!--cxf的webService服务配置 <jaxrs:server id="loginWebServiceRest" address="/loginWeb"> 
+		<jaxrs:serviceBeans> <ref bean="loginWebService"/> </jaxrs:serviceBeans> 
+		</jaxrs:server> -->
+
+
+
+
+
+
+
+
+	<!--oracle数据源配置 <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" 
+		destroy-method="close"> <property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" 
+		/> <property name="url" value="jdbc:oracle:thin:@127.0.0.1:1521:ORCL" /> 
+		<property name="username" value="qiudai" /> <property name="password" value="qiudai" 
+		/> </bean> -->
+
+	<!--mysql数据源配置 -->
+	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
+		destroy-method="close">
+		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
+		<property name="url" value="jdbc:mysql://127.0.0.1:3306/qiudai" />
+		<property name="username" value="qiudai" />
+		<!-- <property name="username" value="root" /> -->
+		<property name="password" value="123456" />
+	</bean>
+
+
+
+
+
+	<!-- 此处配置后就可以实现返回json，但目前会出现乱码
+	<bean id="jsonProvider" class="org.apache.cxf.jaxrs.provider.json.JSONProvider">
+<property name="serializeAsArray" value="true" />
+<property name="arrayKeys" ref="jsonKeys" />
+<property name="produceMediaTypes" ref="jsonTypes" />
+<property name="consumeMediaTypes" ref="jsonTypes" />
+<property name="ignoreNamespaces" value="true" />
+<property name="dropRootElement" value="true" />
+<property name="ignoreMixedContent" value="true" />
+<property name="supportUnwrapped" value="true" />
+<property name="attributesToElements" value="true" />
+</bean>-->
+
+	<bean id="jsonProvider" class="org.apache.cxf.jaxrs.provider.JSONProvider">  
+		<property name="dropRootElement" value="true" />
+	</bean>  
+
+
+
+
+	<!--mybatis配置，sqlSesionFactoryBean注入配置好的数据源便可以进行mybatis的数据库操作 -->
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+
+	<!--指定mybatis的数据库 -->
+	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+		<property name="basePackage" value="com.hust.qiudai.**.dao" />
+	</bean>
+
+	<!-- 服务专用配置文件 -->
+	<import resource="classpath*:/config/*.services.xml" />
+
+</beans>

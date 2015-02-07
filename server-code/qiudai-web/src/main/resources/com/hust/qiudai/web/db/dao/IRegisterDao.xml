@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hust.qiudai.web.db.dao.IRegisterDao">
+
+	<select id="findNumOfTheUser" resultType="int">
+		select count(u.email)
+		from t_qiudai_user u
+		where u.email like #{email}
+	</select>
+
+
+
+	<!-- <insert id="insertUser" parameterType="com.hust.qiudai.register.db.User"> 
+		<selectKey resultType="java.lang.Long" order="BEFORE" keyProperty="userid"> 
+		SELECT qiudai_user_seq.NEXTVAL AS userid FROM DUAL </selectKey> INSERT INTO 
+		t_qiudai_user (userid,email,password,registerdate) VALUES (#{userid},#{email},#{password},#{registerdate}) 
+		</insert> -->
+	<insert id="addUser" useGeneratedKeys="true" keyProperty="userId"
+		parameterType="com.hust.qiudai.web.db.User">
+		insert into t_qiudai_user(email,password,registerdate)
+		values(#{email},#{password},#{registerDate})
+	</insert>
+
+	<select id="findCityInfo" resultType="com.hust.qiudai.web.db.City">
+		SELECT
+		city.cityid as
+		cityid,
+		city.cityname as cityName,
+		city.citylongitude as cityLongitude,
+		city.citylatitude as cityLatitude
+		FROM
+		t_qiudai_city as city
+	</select>
+
+	<select id="findUniversitiesInfoByCityId" resultType="com.hust.qiudai.web.db.University">
+		SELECT
+		university.universityid as universityId,
+		university.universityname as
+		universityName,
+		university.universitylongitude as universityLongitude,
+		university.universitylatitude as universityLatitude,
+		university.cityid
+		as cityId
+		FROM
+		t_qiudai_university as university
+	</select>
+
+
+	<update id="updateUserNameByUserId">
+		UPDATE t_qiudai_user
+		SET username = #{username}
+		WHERE
+		userid = #{userid}
+	</update>
+
+	<select id="getCampusListByUniversityId" resultType="com.hust.qiudai.web.db.Campus">
+		select
+		c.campusid as campusId,c.campusname as campusName,c.universityid as
+		universityId from t_qiudai_campus c where c.universityid =
+		#{universityid}
+		order by campusid
+	</select>
+
+
+	<select id="getCampusListHasDiscountinShopsByUniversityId"
+		resultType="com.hust.qiudai.web.db.Campus">
+		SELECT
+		DISTINCT
+		c.campusid as campusId,
+		c.campusName as
+		campusName
+		FROM
+		t_qiudai_shops_goods sg
+		JOIN t_qiudai_shops s ON
+		sg.shopsid = s.shopsid
+		JOIN t_qiudai_campus c ON s.campusid =
+		c.campusid
+		WHERE
+		c.universityid = #{universityid} and sg.isdiscounting =
+		1
+		ORDER BY campusid
+	</select>
+
+
+
+</mapper>

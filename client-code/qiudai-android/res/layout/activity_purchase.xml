@@ -1,0 +1,442 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+	android:background="#DDDDDD"
+     >
+
+    
+   
+    
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center" > 
+        
+        
+         <TextView
+       	 	android:id="@+id/txt_qiudai_logo"
+        	android:layout_width="fill_parent"
+        	android:layout_height="60dp"
+        	android:background="#336699"
+        	android:gravity="center"
+        	android:text="信息"
+        	android:textColor="#FFFFFF"
+        	android:textSize="20dp" >
+    	</TextView>
+    	
+         
+         <TextView
+            android:id="@+id/txt_supply_content"
+            android:layout_width="fill_parent"
+            android:layout_height="50dip"
+            android:layout_marginLeft="5dip"
+            android:layout_marginRight="5dip"
+            android:layout_marginTop="15dip"
+            android:background="@drawable/publishedit"
+            android:hint="@string/supplyGoods"
+            android:editable="false"
+            android:paddingLeft="4dip" >
+        </TextView>
+        
+         
+         <!--  
+        <EditText
+            android:id="@+id/supermarket"
+            android:layout_width="fill_parent"
+            android:layout_height="50dip"
+            android:layout_marginLeft="5dip"
+            android:layout_marginRight="5dip"
+            android:layout_marginTop="5dip"
+            android:background="@drawable/publishedit"
+            android:hint="@string/supermarket"
+            android:paddingLeft="4dip" >
+        </EditText>-->
+        <LinearLayout  
+    		android:layout_width="fill_parent"
+    		android:layout_height="wrap_content"
+    		android:layout_marginLeft="5dip"
+            android:layout_marginRight="5dip"
+            android:layout_marginTop="2dip">
+    		
+            
+            
+             <RelativeLayout 
+             android:id="@+id/layout_supply"  
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:background="@drawable/textviewsharp"
+             android:layout_weight="1"
+         	>
+                <TextView 
+                android:id="@+id/txt_supply_word"
+               android:layout_width="wrap_content"
+    		 	android:layout_height="50dp"
+    		 	android:text="补充"
+    		 	android:textStyle="bold"
+    		 	android:layout_marginRight="5dp"
+    		 	android:textColor="#666666"
+    			android:layout_centerHorizontal="true"
+    		 	android:layout_centerVertical="true"
+             	android:gravity="center" >
+             </TextView>
+             <ImageView 
+                 android:id="@+id/img_supply_icon"
+         	     android:layout_width="20dp"
+         	     android:layout_height="20dp"
+         	     android:background="@drawable/supply"
+         	     android:layout_toLeftOf="@id/txt_supply_word"
+         	     android:layout_marginRight="5dp"
+         	     android:layout_centerHorizontal="true"
+    		 	 android:layout_centerVertical="true"
+             	 android:gravity="center" 
+         	     android:layout_alignBaseline="@id/txt_supply_word"
+         	 />
+          </RelativeLayout> 
+            
+            
+            
+            
+            
+          <RelativeLayout 
+             android:id="@+id/layout_shopping_trolley" 
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:background="@drawable/textviewsharp"
+             android:layout_weight="1"
+              
+          >
+            
+             <TextView 
+                android:id="@+id/txt_shopping_trolley_word"
+             	android:layout_width="wrap_content"
+    		 	android:layout_height="50dp"
+    		 	android:text="购物车"
+    		 	android:textStyle="bold"
+    		 	android:layout_marginRight="5dp"
+    		 	android:textColor="#666666"
+    			android:layout_centerHorizontal="true"
+    		 	android:layout_centerVertical="true"
+             	android:gravity="center" >
+         	 </TextView>  
+         	  <ImageView 
+         	     android:id="@+id/img_shopping_trolley_icon" 
+         	     android:layout_width="20dp"
+         	     android:layout_height="20dp"
+         	     android:background="@drawable/gouwuche"
+         	     android:layout_toLeftOf="@id/txt_shopping_trolley_word"
+         	     android:layout_marginRight="5dp"
+         	     android:layout_centerHorizontal="true"
+    		 	android:layout_centerVertical="true"
+             	android:gravity="center" 
+         	     android:layout_alignBaseline="@id/txt_shopping_trolley_word"
+         	 />
+          </RelativeLayout>  
+        
+          
+         
+           
+            
+    	</LinearLayout>
+        
+        
+        
+        <!--  
+        <EditText
+            android:id="@+id/tip"
+            android:layout_width="fill_parent"
+            android:layout_height="50dip"
+            android:layout_marginLeft="5dip"
+            android:layout_marginRight="5dip"
+            android:layout_marginTop="15dip"
+            android:background="@drawable/publishedit"
+            android:hint="@string/tip"
+            android:paddingLeft="4dip" >
+        </EditText>
+        -->
+         <RelativeLayout
+        	android:id="@+id/layout_fee"
+        	android:layout_width="fill_parent"
+        	android:layout_height="50dp"
+        	android:layout_marginLeft="5dip"
+            android:layout_marginRight="5dip"
+            android:layout_marginTop="20dip"
+       		android:background="@drawable/publishtextviewlyout" 
+       		>
+
+
+        <Button
+            android:id="@+id/btn_add_fee"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="20dip"
+            android:layout_centerVertical="true"
+            android:background="@drawable/addpng" />
+
+        <Button
+            android:id="@+id/btn_minus_fee"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_toLeftOf="@id/btn_add_fee"
+            android:layout_alignBaseline="@id/btn_add_fee"
+            android:layout_marginRight="20dp"
+            android:visibility="invisible"
+            android:background="@drawable/minuspng" />
+        
+        <LinearLayout
+            android:id="@+id/tipContent"
+        	android:layout_width="wrap_content"
+        	android:layout_height="fill_parent"
+       	 	android:layout_centerInParent="true"
+            android:layout_alignParentLeft="true"
+        	android:orientation="horizontal"
+       	 	android:gravity="center_vertical|left">
+        
+            
+         <ImageView
+            android:id="@+id/img_shose_png"
+            android:layout_width="27dp"
+            android:layout_height="30dp"
+            android:gravity="center|left"
+            android:layout_marginLeft="12dip"
+            android:background="@drawable/shose4runfee"
+           />
+            
+            
+            
+        <TextView
+            android:id="@+id/txt_fee_word"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:gravity="center|left"
+            android:text="跑路费 "
+            android:layout_marginLeft="10dip"
+            android:textColor="#666666"
+            android:textSize="15sp" />
+        <TextView
+            android:id="@+id/txt_fee_num"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+             android:gravity="center|left"
+            android:text="1"
+            android:textColor="#666666"
+            android:textSize="20sp" />
+        <TextView
+            android:id="@+id/txt_rmb_word"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+             android:gravity="center|left"
+            android:text=" 元"
+            android:textColor="#666666"
+            android:textSize="15sp" />
+        <ImageView
+            android:id="@+id/img_fee_close"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+           android:gravity="center|left"
+           android:layout_marginLeft="10dp"
+            android:visibility="invisible"
+            android:contentDescription="@drawable/close_pushbanner"
+            android:src="@drawable/close_pushbanner" />
+        
+        </LinearLayout>
+        
+        
+        
+        
+        
+    </RelativeLayout>
+        
+        
+        
+        
+        <!--  
+        <EditText
+            android:id="@+id/address"
+            android:layout_width="fill_parent"
+            android:layout_height="50dip"
+            android:layout_marginLeft="5dip"
+            android:layout_marginRight="5dip"
+            android:layout_marginTop="5dip"
+            android:background="@drawable/publishedit"
+            android:hint="@string/address"
+            android:paddingLeft="4dip" >
+        </EditText>
+        -->
+         <RelativeLayout
+        	android:id="@+id/topBarLayout"
+        	android:layout_width="fill_parent"
+        	android:layout_height="50dp"
+        	android:layout_marginLeft="5dip"
+            android:layout_marginRight="5dip"
+            android:layout_marginTop="5dip"
+       		android:background="@drawable/publishtextviewlyout" 
+       		>
+
+
+        <Button
+            android:id="@+id/btn_add_arrival_time"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="20dip"
+            android:layout_centerVertical="true"
+            android:background="@drawable/addpng" />
+
+        <Button
+            android:id="@+id/btn_minus_arrival_time"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_toLeftOf="@id/btn_add_arrival_time"
+            android:layout_alignBaseline="@id/btn_add_arrival_time"
+            android:layout_marginRight="20dp"
+            android:visibility="invisible"
+            android:background="@drawable/minuspng" />
+        
+        <LinearLayout
+            android:id="@+id/tipContentLayout"
+        	android:layout_width="wrap_content"
+        	android:layout_height="fill_parent"
+       	 	android:layout_centerInParent="true"
+            android:layout_alignParentLeft="true"
+        	android:orientation="horizontal"
+       	 	android:gravity="center_vertical|left">
+        
+            
+         <ImageView
+            android:id="@+id/img_time_png"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:gravity="center|left"
+            android:layout_marginLeft="13dip"
+            android:background="@drawable/clock4arrival"
+           />
+            
+        <TextView
+            android:id="@+id/txt_time_num"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_marginLeft="10dip"
+            android:gravity="center|left"
+            android:text="20"
+            android:textColor="#666666"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/txt_time_word"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+             android:gravity="center|left"
+            android:text="分钟内送到"
+            android:textColor="#666666"
+            android:textSize="15sp" />
+       
+        <ImageView
+            android:id="@+id/img_time_close"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+           android:gravity="center|left"
+           android:layout_marginLeft="10dp"
+            android:visibility="invisible"
+            android:contentDescription="@drawable/close_pushbanner"
+            android:src="@drawable/close_pushbanner" />
+        
+        </LinearLayout>
+        
+        
+        
+        
+        
+    </RelativeLayout>
+         
+          <RelativeLayout
+        	android:id="@+id/layout_address"
+        	android:layout_width="fill_parent"
+        	android:layout_height="50dp"
+        	android:layout_marginLeft="5dip"
+            android:layout_marginRight="5dip"
+            android:layout_marginTop="20dip"
+       		android:background="@drawable/publishtextviewlyout"  
+       		>
+
+
+        <ImageView
+            android:id="@+id/img_address_modify_icon1"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="20dip"
+            android:layout_centerVertical="true"
+            android:visibility="visible"
+            android:background="@drawable/modify"
+            />
+		<ImageView
+            android:id="@+id/img_address_modify_icon2"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="20dip"
+            android:layout_centerVertical="true"
+            android:visibility="invisible"
+            android:background="@drawable/modify"
+            />
+        
+        
+         <TextView
+            android:id="@+id/img_address_icon"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dip"
+            android:background="@drawable/location4dormitory"
+            />
+        
+        
+        <TextView
+            android:id="@+id/txt_address_word"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_centerInParent="true"
+            android:layout_toRightOf="@id/img_address_icon"
+            android:gravity="center_vertical|left"
+            android:layout_marginLeft="10dip"
+            android:text="送至"
+            android:textColor="#666666"
+            android:textSize="15sp" />
+         <TextView
+            android:id="@+id/txt_address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_toRightOf="@id/txt_address_word"
+            android:gravity="center_vertical|left"
+            android:text="韵苑四栋"
+            android:textColor="#666666"
+            android:textSize="15sp" />
+        
+    </RelativeLayout>
+        
+         
+       
+    </LinearLayout>
+	
+    
+    
+     <Button
+        android:id="@+id/btn_publish"
+         android:layout_width="fill_parent"
+        android:layout_height="50dip"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+       	android:layout_marginLeft="10dp"
+       	android:layout_marginRight="10dp"
+       	android:layout_marginBottom="10dp"
+       	android:layout_marginTop="5dp"
+        android:background="@drawable/button"
+ 		android:textColor="#FFFFFF"
+        android:text="发布求带信息" />
+    
+</RelativeLayout>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hust.qiudai.web.db.dao.IDormitoryDao">
+
+	<select id="saveTheDormitoryNumberDaoToUser">
+		update t_qiudai_user u set u.dormitorynumber =
+		#{dormitoryNumber} where u.userid = #{userId}
+	</select>
+
+
+	<select id="getDormitoryListByCampusId" resultType="com.hust.qiudai.web.db.Dormitory">
+		select
+		d.dormibuildingid as dormibuildingid,
+		d.dormibuildingname as dormibuildingname,
+		d.campusid as campusid
+		from t_qiudai_dormibuilding d where d.campusid = #{campusid}
+	</select>
+
+</mapper>

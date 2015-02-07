@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:shape="oval"
+    android:width="1dp"
+    android:color="#ffffff" >
+
+    <ListView
+        android:id="@+id/listview_for_pulldown_selection_left"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="3"
+        android:background="#EEEEEE"
+        android:cacheColorHint="@android:color/transparent"
+        android:divider="#EEEEEE"
+        android:dividerHeight="1dp"
+        android:scrollbars="none" />
+
+    <View
+        android:layout_width="6dp"
+        android:layout_height="fill_parent"
+        android:background="#F8F8F8" />
+
+    <ListView
+        android:id="@+id/listview_for_pulldown_selection_right"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="2"
+        android:background="#F8F8F8"
+        android:cacheColorHint="@android:color/transparent"
+        android:divider="#E5E5E5"
+        android:dividerHeight="1dp"
+        android:scrollbars="none" />
+
+
+</LinearLayout>

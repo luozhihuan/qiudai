@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#FBFBFB"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dip"
+        android:gravity="center" >
+
+        <ImageView
+            android:id="@+id/imageRegister"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:contentDescription="@drawable/laotou"
+            android:src="@drawable/laotou" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/r"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dip"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:orientation="vertical" >
+
+         <RelativeLayout
+            android:id="@+id/emailLayout"
+            android:layout_width="fill_parent"
+            android:layout_height="50dip"
+            android:layout_marginLeft="5dip"
+            android:layout_marginRight="5dip"
+            android:background="@drawable/edit"
+            >
+
+            <EditText
+                android:id="@+id/email_edt"
+                android:layout_alignParentLeft="true"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_marginBottom="2dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="40dp"
+                android:layout_marginTop="2dp"
+                android:background="@null"
+                android:hint="@string/email"
+                android:paddingLeft="4dip" 
+                android:singleLine="true" >
+            </EditText>
+
+            <ImageView
+                android:id="@+id/email_Tips"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginBottom="13dp"
+                android:layout_marginRight="9dp"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:contentDescription="@drawable/close_pushbanner"
+                android:src="@drawable/close_pushbanner"
+                android:visibility="invisible" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/passwordLayout"
+            android:layout_width="fill_parent"
+            android:layout_height="50dip"
+            android:layout_below="@+id/emailLayout"
+            android:layout_marginLeft="5dip"
+            android:layout_marginRight="5dip"
+            android:background="@drawable/edit"
+            >
+
+            <EditText
+                android:id="@+id/password_edt"
+                android:layout_width="fill_parent"
+                android:layout_height="50dip"
+                android:layout_marginBottom="2dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="40dp"
+                android:layout_marginTop="2dp"
+                android:background="@null"
+                android:hint="@string/pass"
+                android:inputType="textPassword"
+                android:paddingLeft="4dip" />
+
+
+            <ImageView
+                android:id="@+id/password_Tips"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginBottom="13dp"
+                android:layout_marginRight="8dp"
+                android:src="@drawable/close_pushbanner"
+                android:visibility="invisible" />
+        </RelativeLayout>
+    </RelativeLayout>
+  
+  
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/register_btn"
+            android:layout_width="fill_parent"
+            android:layout_height="50dip"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="10dip"
+            android:background="@drawable/button"
+            android:text="@string/register"
+            android:textColor="#ffffff"
+            android:textSize="16sp" />
+
+      
+    </RelativeLayout>
+    
+    
+    
+
+</LinearLayout>

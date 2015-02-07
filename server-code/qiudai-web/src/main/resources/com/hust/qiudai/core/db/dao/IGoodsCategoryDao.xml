@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hust.qiudai.core.db.dao.IGoodsCategoryDao">
+
+	<select id="getGoodsCategoryList" resultType="com.hust.qiudai.core.db.GoodsCategory">
+		select
+		gc.categoryid as categoryId,
+		gc.categoryname as categoryName,
+		gc.kindcategoryid as kindCategoryId from
+		t_qiudai_goods_category gc
+		join
+		t_qiudai_kind_category kc
+		on
+		gc.kindcategoryid = kc.kindcategoryid
+		where kc.kindcategoryid =
+		#{kindcategoryid}
+	</select>
+
+
+
+	<select id="findGoodsInfoListByGoodsCategoryId" resultType="com.hust.qiudai.core.db.GoodsInfo">
+		SELECT
+		g.goodsid as goodsInfoId,
+		g.goodsname as goodsName,
+		g.goodsprice
+		as goodsPrice,
+		g.goodscategory as goodsCategory,
+		g.goodsimageurl as
+		goodsImageUrl
+		FROM
+		t_qiudai_goods g
+		WHERE
+		g.goodscategory = #{categoryid}
+	</select>
+
+	<select id="findGoodsInfoList" resultType="com.hust.qiudai.core.db.GoodsInfo">
+		SELECT
+		g.goodsid as
+		goodsInfoId,
+		g.goodsname as goodsName,
+		g.goodsprice as goodsPrice,
+		g.goodscategory as goodsCategory,
+		g.goodsimageurl as goodsImageUrl
+		FROM
+		t_qiudai_goods g
+	</select>
+
+	<select id="findGoodsKindCategoryList" resultType="com.hust.qiudai.core.db.GoodsKindCategory">
+		SELECT
+		kc.kindcategoryid AS kindCategoryId,
+		kc.kindcategoryname AS kindCategoryName
+		FROM
+		t_qiudai_kind_category kc
+		ORDER BY
+		kc.kindcategoryid
+	</select>
+
+</mapper>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hust.qiudai.core.db.dao.IOrderReceivingDao">
+
+
+	<insert id="addQiudaiOrder" parameterType="com.hust.qiudai.core.db.QiudaiOrder">
+		insert into
+		t_qiudai_order_receiving
+		(qiudaiinfoid
+		,orderreceiverid
+		,orderreceivingtime
+		)VALUES
+		(#{qiudaiInfoId},#{orderReceiverId},#{orderReceivingTime})
+	</insert>
+
+	<update id="updateTheQiudaiInfoToBeReceivied" parameterType="java.lang.Long">
+		UPDATE t_qiudai_qiudai_info i SET i.isreceivied = 1 WHERE
+		i.qiudaiinfoid = #{qiudaiinfoid}
+	</update>
+
+</mapper>

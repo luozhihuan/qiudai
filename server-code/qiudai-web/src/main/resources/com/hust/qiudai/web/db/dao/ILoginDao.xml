@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hust.qiudai.web.db.dao.ILoginDao">
+
+	<select id="checkTheUser" resultType="com.hust.qiudai.web.db.User">
+		select u.userid as userId,u.email as email,u.password as password from
+		t_qiudai_user u where u.email like #{email}
+	</select>
+
+</mapper>

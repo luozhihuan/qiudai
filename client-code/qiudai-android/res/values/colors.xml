@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- GoodsSelectActivity（商品选择）界面上三个下拉选择列表中字体内容的颜色 -->
+    <color name="selectionWordColor">#262626</color>
+    
+    <!-- GoodsSelectActivity(商品选择) 界面上三个下拉 选择列表中未被内容被选中后字体背景颜色-->
+    <color name="unSelectedBackgroundColor">#EEEEEE</color>
+    <!-- GoodsSelectActivity(商品选择) 界面上三个下拉 选择列表中被内容被选中后字体颜色-->
+	<color name="wasSelectedWordColor">#006699</color>
+	<!-- GoodsSelectActivity(商品选择) 界面上三个下拉 选择列表中被内容被选中后字体背景颜色-->
+	<color name="wasSelectedBackgroundColor">#F8F8F8</color>
+	
+	<!-- 确认按键的背景色 -->
+	<color name="confirm_btn_background">#E5E5E5</color>
+	
+</resources>
